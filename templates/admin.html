@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Presentasi — CipherQuest{% endblock %}
+
+{% block content %}
+<div class="page-container admin-page">
+    <div class="page-header">
+        <div class="header-badge-row">
+            <span class="badge badge-confidential">ADMIN CONSOLE</span>
+            <span class="badge badge-classified">PRESENTATION MODE</span>
+        </div>
+        <h1 class="page-title">Panel Admin CipherQuest</h1>
+        <p class="page-desc">Kontrol presentasi untuk berpindah misi dan mengatur rank tanpa mengubah alur pemain biasa.</p>
+    </div>
+
+    {% if not admin_authenticated %}
+    <section class="intel-card admin-login-card">
+        <div class="intel-card-header">
+            <span class="card-icon-dot"></span>
+            <h2 class="intel-card-title">VERIFIKASI AKSES ADMIN</h2>
+        </div>
+        <p class="text-muted">Masukkan kode akses untuk membuka konsol presentasi.</p>
+        <form method="POST" action="{{ url_for('admin_panel') }}" class="admin-form">
+            <div class="form-group">
+                <label for="admin-code" class="form-label">Kode Admin</label>
+                <input id="admin-code" type="password" name="admin_code" class="form-control font-mono" placeholder="Masukkan kode akses" required autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Buka Halaman Admin
+            </button>
+        </form>
+    </section>
+    {% else %}
+    <div class="admin-grid">
+        <section class="intel-card admin-panel-card">
+            <div class="intel-card-header">
+                <span class="card-icon-dot"></span>
+                <h2 class="intel-card-title">LOMPAT KE MISI</h2>
+            </div>
+            <p class="text-muted">Pilih salah satu dari 24 misi atau pertarungan bos. Akses admin melewati kunci urutan misi.</p>
+            <form method="POST" class="admin-form">
+                <input type="hidden" name="action" value="jump">
+                <div class="form-group">
+                    <label for="admin-mission" class="form-label">Pilih Misi</label>
+                    <select id="admin-mission" name="mission_id" class="form-control" required>
+                        {% for m in missions %}
+                        <option value="{{ m.id }}">{% if m.is_boss %}BOSS · {% else %}{{ m.code }} · {% endif %}{{ m.title }}{% if m.status == 'completed' %} (Selesai){% endif %}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Buka Misi Pilihan</button>
+            </form>
+        </section>
+
+        <section class="intel-card admin-panel-card">
+            <div class="intel-card-header">
+                <span class="card-icon-dot"></span>
+                <h2 class="intel-card-title">PENGATURAN RANK</h2>
+            </div>
+            <p class="text-muted">Atur lambang rank yang tampil pada dashboard. Pilihan ini khusus mode presentasi.</p>
+            {% set rank_names = ['Warrior', 'Epic', 'Mythic', 'Mythic Glory', 'Mythic Immortal'] %}
+            {% set rank_files = ['warrior', 'epic', 'mythic', 'mythic-glory', 'mythic-immortal'] %}
+            <div class="admin-current-rank font-mono rank-chip-{{ stats.rank }}">
+                <img src="{{ url_for('static', filename='images/ranks/' ~ rank_files[stats.rank - 1] ~ '.svg') }}" alt="" class="admin-rank-emblem">
+                <span>RANK {{ stats.rank }} · {{ rank_names[stats.rank - 1] }}</span>
+            </div>
+            <form method="POST" class="admin-form">
+                <input type="hidden" name="action" value="set_rank">
+                <div class="form-group">
+                    <label for="admin-rank" class="form-label">Pilih Rank 1–5</label>
+                    <select id="admin-rank" name="rank" class="form-control" required>
+                        {% for rank_no in range(1, 6) %}
+                        <option value="{{ rank_no }}" {% if stats.rank == rank_no %}selected{% endif %}>Rank {{ rank_no }} — {{ rank_names[rank_no - 1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-outline">Terapkan Rank</button>
+            </form>
+        </section>
+    </div>
+
+    <section class="intel-card admin-status-card">
+        <div class="admin-status-row">
+            <div>
+                <h2 class="intel-card-title">STATUS PRESENTASI</h2>
+                <p class="text-muted">Admin aktif · Progres {{ stats.completed_count }}/{{ stats.total_missions }} · Restart {{ stats.restart_count }}/5</p>
+            </div>
+            <form method="POST">
+                <input type="hidden" name="action" value="logout">
+                <button type="submit" class="btn btn-sm btn-danger-outline">Keluar Admin</button>
+            </form>
+        </div>
+    </section>
+    {% endif %}
+</div>
+{% endblock %}

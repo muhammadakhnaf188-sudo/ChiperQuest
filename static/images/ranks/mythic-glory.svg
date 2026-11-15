@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+<defs>
+ <linearGradient id="sun" x1="19" y1="13" x2="111" y2="116" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF9D8"/><stop offset=".25" stop-color="#FFE077"/><stop offset=".58" stop-color="#D28A22"/><stop offset="1" stop-color="#7C351A"/></linearGradient>
+ <linearGradient id="ruby" x1="37" y1="24" x2="91" y2="104" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE2EA"/><stop offset=".32" stop-color="#FF6D91"/><stop offset=".72" stop-color="#A52058"/><stop offset="1" stop-color="#4C143A"/></linearGradient>
+</defs>
+<path d="M6 58 30 34 25 67 45 77 28 104 8 88 18 69Z" fill="#8B4A1D" stroke="url(#sun)" stroke-width="4"/>
+<path d="m122 58-24-24 5 33-20 10 17 27 20-16-10-19Z" fill="#8B4A1D" stroke="url(#sun)" stroke-width="4"/>
+<path d="M64 4 75 18 94 12 94 31 113 38 101 54 111 72 91 80 89 101 69 99 64 121 55 99 35 101 37 80 17 72 27 54 15 38 34 31 34 12 53 18Z" fill="#4B2A29" stroke="url(#sun)" stroke-width="4"/>
+<path d="m64 15 28 23-5 41-23 26-23-26-5-41Z" fill="url(#sun)" stroke="#FFF4C5" stroke-width="2"/>
+<path d="m38 44 8-20 18 13 18-13 8 20-10 14H48Z" fill="#9B5A1B" stroke="#FFF0B5" stroke-width="3"/>
+<path d="m64 32 7 12 14 2-10 10 2 14-13-7-13 7 2-14-10-10 14-2Z" fill="url(#ruby)" stroke="#FFF1C7" stroke-width="2"/>
+<path d="M64 18v12M47 81l17 15 17-15M27 45l10 7m54-7-10 7" stroke="#FFF5D6" stroke-width="3" stroke-linecap="round"/>
+<circle cx="64" cy="53" r="4" fill="#FFF"/>
+</svg>

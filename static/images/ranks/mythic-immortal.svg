@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+<defs>
+ <linearGradient id="divine" x1="14" y1="7" x2="116" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset=".2" stop-color="#FFD6A1"/><stop offset=".48" stop-color="#E9A53E"/><stop offset=".73" stop-color="#B94848"/><stop offset="1" stop-color="#61234E"/></linearGradient>
+ <linearGradient id="core" x1="41" y1="24" x2="88" y2="103" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFDEB"/><stop offset=".24" stop-color="#FFDA7D"/><stop offset=".58" stop-color="#F06C77"/><stop offset="1" stop-color="#72245C"/></linearGradient>
+ <filter id="aura" x="0" y="0" width="128" height="128"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<circle cx="64" cy="63" r="54" stroke="#FFCF79" stroke-width="2" opacity=".65"/>
+<circle cx="64" cy="63" r="47" stroke="#FFF2CB" stroke-width="1.5" stroke-dasharray="2 4"/>
+<path d="M5 50 27 25 29 52 48 57 35 80 8 76 21 62Z" fill="#6C3151" stroke="url(#divine)" stroke-width="4"/>
+<path d="m123 50-22-25-2 27-19 5 13 23 27-4-13-14Z" fill="#6C3151" stroke="url(#divine)" stroke-width="4"/>
+<path d="M64 3 76 17 95 9 96 29 117 38 104 56 117 76 96 84 91 108 70 101 64 124 58 101 37 108 32 84 11 76 24 56 11 38 32 29 33 9 52 17Z" fill="#3E2447" stroke="url(#divine)" stroke-width="4"/>
+<path d="m64 15 31 23-6 43-25 31-25-31-6-43Z" fill="url(#divine)" stroke="#FFF7DB" stroke-width="2"/>
+<path d="m36 44 8-22 20 15 20-15 8 22-11 16H47Z" fill="#6C2A57" stroke="#FFEAB7" stroke-width="3"/>
+<path d="m64 29 9 15 18 3-13 13 3 19-17-9-17 9 3-19-13-13 18-3Z" fill="url(#core)" stroke="#FFF8DB" stroke-width="2.5"/>
+<path d="m64 36 7 18-7 23-7-23Z" fill="#FFFCE8" opacity=".9"/>
+<path d="M64 6v16M18 42l15 7m77-7-15 7M64 105v16M38 94l-8 9m60-9 8 9" stroke="#FFF4D2" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="64" cy="55" r="5" fill="#FFF"/>
+</svg>

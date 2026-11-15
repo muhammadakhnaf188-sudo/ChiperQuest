@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+<defs>
+ <linearGradient id="violet" x1="20" y1="10" x2="108" y2="119" gradientUnits="userSpaceOnUse"><stop stop-color="#F4D7FF"/><stop offset=".28" stop-color="#B58BFF"/><stop offset=".62" stop-color="#6539B8"/><stop offset="1" stop-color="#271A68"/></linearGradient>
+ <linearGradient id="silver" x1="28" y1="22" x2="100" y2="99" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset=".45" stop-color="#B7C8F2"/><stop offset="1" stop-color="#53658E"/></linearGradient>
+ <filter id="glow" x="0" y="0" width="128" height="128"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<path d="M13 55 34 42 27 68 43 78 28 100 9 88 18 71Z" fill="#54369C" stroke="#BBA0FF" stroke-width="3"/>
+<path d="m115 55-21-13 7 26-16 10 15 22 19-12-9-17Z" fill="#54369C" stroke="#BBA0FF" stroke-width="3"/>
+<path d="M64 7 105 33 97 82 64 119 31 82 23 33Z" fill="#2B1E68" stroke="url(#violet)" stroke-width="5"/>
+<path d="m64 17 30 20-6 39-24 28-24-28-6-39Z" fill="url(#silver)" stroke="#F6E8FF" stroke-width="2"/>
+<path d="m64 28 11 22 24 4-18 17 4 24-21-12-21 12 4-24-18-17 24-4Z" fill="url(#violet)" stroke="#FFF" stroke-width="2"/>
+<path d="M64 35 74 58 64 81 54 58Z" fill="#F7D9FF" stroke="#6C48BF" stroke-width="2"/>
+<path d="m39 91 25 20 25-20M35 30l-10-9m68 9 10-9" stroke="#E4D7FF" stroke-width="3" stroke-linecap="round"/>
+<circle cx="64" cy="58" r="4" fill="#FFF"/>
+</svg>
